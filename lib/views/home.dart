@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/widgetBuild.dart';
+import 'package:myapp/widgets/ThickSeparator.dart';
+import 'package:myapp/widgets/widgetBuild.dart';
 
 class Home extends StatelessWidget {
-  Home(this.title);
+  Home({this.title = "Home"});
 
   final String title;
 
@@ -16,9 +17,9 @@ class Home extends StatelessWidget {
       body: ListView.separated(
         itemBuilder: (BuildContext context, int index) =>
             _buildItem(context, index),
-        itemCount: 5,
-        separatorBuilder: (BuildContext context, int index) => Divider(
-              height: 50.0,
+        itemCount: 10,
+        separatorBuilder: (BuildContext context, int index) => ThickSeparator(
+              thickness: 5.0,
               color: Colors.red,
             ),
       ),
