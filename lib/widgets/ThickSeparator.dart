@@ -4,15 +4,12 @@ class ThickSeparator extends StatelessWidget {
   const ThickSeparator({
     Key key,
     this.thickness = 0.1,
-    this.height = 16.0,
     this.indent = 0.0,
     this.color,
-  })  : assert(height >= 0.0),
-        assert(thickness >= 0.0),
+  })  : assert(thickness >= 0.0),
         super(key: key);
 
   final double thickness;
-  final double height;
   final double indent;
   final Color color;
 
@@ -28,7 +25,7 @@ class ThickSeparator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height,
+      height: thickness,
       child: Center(
         child: Container(
           margin: EdgeInsetsDirectional.only(start: indent),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/widgetBuild.dart';
+import 'package:myapp/widgets/myWidgetCreator.dart';
 
 class Counter extends StatefulWidget {
   Counter({this.title = "Counter"});

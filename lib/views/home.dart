@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/widgets/ThickSeparator.dart';
-import 'package:myapp/widgets/widgetBuild.dart';
+import 'package:myapp/widgets/myWidgetCreator.dart';
 
 class Home extends StatelessWidget {
   Home({this.title = "Home"});
@@ -19,8 +19,8 @@ class Home extends StatelessWidget {
             _buildItem(context, index),
         itemCount: 10,
         separatorBuilder: (BuildContext context, int index) => ThickSeparator(
-              thickness: 5.0,
-              color: Colors.red,
+              thickness: 1.0,
+              color: Colors.grey
             ),
       ),
     );
