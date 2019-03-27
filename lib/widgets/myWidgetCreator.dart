@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/views/counter.dart';
 import 'package:myapp/views/home.dart';
+import 'package:progress_hud/progress_hud.dart';
 
 class MyWidgetCreator {
   static Widget getDrawer(BuildContext context) {
@@ -34,5 +35,14 @@ class MyWidgetCreator {
     Navigator.pop(context);
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (BuildContext context) => widget));
+  }
+
+  static Widget buildGenericSpinner([String text = 'Refreshing']) {
+    return new ProgressHUD(
+        backgroundColor: Colors.black12,
+        color: Colors.white,
+        containerColor: Colors.blue,
+        borderRadius: 5.0,
+        text: text);
   }
 }
