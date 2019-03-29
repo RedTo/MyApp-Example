@@ -37,8 +37,7 @@ class _ContactState extends State<ContactPage>
         //actions are usually in the upper right corner (right side in the appbar)
         actions: <Widget>[
           FlatButton(
-            child: Icon(Icons.refresh),
-            color: Colors.white,
+            child: Icon(Icons.refresh, color: Colors.white),
             onPressed: () => _getData(true),
           )
         ],
@@ -50,7 +49,7 @@ class _ContactState extends State<ContactPage>
             _buildItem(context, _contacts[index]), //specifies how a list item is build
         itemCount: _contacts.length, //specifies how many times the build function is called
         separatorBuilder: (BuildContext context, int index) => //specifies which widget is separating two list items
-            ThickSeparator(thickness: 15.0, color: Colors.red, indent: 50.0),
+            ThickSeparator(thickness: 1.0, color: Colors.grey, indent: 15.0),
       ),
     );
   }
