@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+//custom separator widget
 class ThickSeparator extends StatelessWidget {
+  //the user could specify how thick the separator should be,
+  // which indent (from left) and which color the separator should have
   const ThickSeparator({
     Key key,
     this.thickness = 0.1,
@@ -13,23 +16,15 @@ class ThickSeparator extends StatelessWidget {
   final double indent;
   final Color color;
 
-  static BorderSide createBorderSide(BuildContext context,
-      {Color color, double width = 0.0}) {
-    assert(width != null);
-    return BorderSide(
-      color: color ?? Theme.of(context).dividerColor,
-      width: width,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: thickness,
       child: Center(
         child: Container(
+          //you could play around with the margin to also implement a indent from the right for example
           margin: EdgeInsetsDirectional.only(start: indent),
-          height: thickness,
+          height: thickness, //make the container as height as the sized box
           color: color,
         ),
       ),
