@@ -32,8 +32,8 @@ class _AnimationPageState extends State<AnimationPage>
 
   @override
   dispose() {
-    super.dispose();
     controller.dispose();
+    super.dispose();
   }
 
   @override
