@@ -11,7 +11,7 @@ matrix:
             - libstdc++6
             - fonts-droid
       before_script:
-        - git clone https://github.com/flutter/flutter.git -b beta
+        - git clone https://github.com/flutter/flutter.git -b stable
         - ./flutter/bin/flutter doctor
         - gem install coveralls-lcov
       script:
@@ -29,9 +29,10 @@ matrix:
         components:
           - tools
           - platform-tools
-          - build-tools-25.0.3
-          - android-25
-          - sys-img-armeabi-v7a-google_apis-25
+          - build-tools-28.0.3
+          - android-28
+          - sys-img-armeabi-v7a-google_apis-28
+          - sys-img-x86_64-android-28
           - extra-android-m2repository
           - extra-google-m2repository
           - extra-google-android-support
@@ -50,20 +51,20 @@ matrix:
         - unzip -qq gradle-3.5-bin.zip
         - export GRADLE_HOME=$PWD/gradle-3.5
         - export PATH=$GRADLE_HOME/bin:$PATH
-        - git clone https://github.com/flutter/flutter.git -b beta
+        - git clone https://github.com/flutter/flutter.git -b stable
       script:
         - ./flutter/bin/flutter -v build apk
 
     - os: osx
       language: generic
-      osx_image: xcode8.3
+      osx_image: xcode10.1
       before_script:
-        - pip install six
+        - pip2 install six
         - brew update
         - brew install --HEAD libimobiledevice
         - brew install ideviceinstaller
         - brew install ios-deploy
-        - git clone https://github.com/flutter/flutter.git -b beta
+        - git clone https://github.com/flutter/flutter.git -b stable
       script:
         - ./flutter/bin/flutter -v build ios --no-codesign
 
