@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/animation.dart';
+import 'package:myapp/pages/animationPage.dart';
 import 'package:myapp/pages/counterPage.dart';
 import 'package:myapp/pages/contactPage.dart';
 import 'package:progress_hud/progress_hud.dart';
