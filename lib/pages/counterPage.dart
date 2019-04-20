@@ -32,9 +32,11 @@ class _CounterPageState extends State<CounterPage> {
         title: Text(widget.title),
       ),
       drawer: MyWidgetCreator.getDrawer(context),
-      body: Center( //horizontally centered
+      body: Center(
+        //horizontally centered
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,//used to the center vertically
+          mainAxisAlignment: MainAxisAlignment.center,
+          //used to the center vertically
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
@@ -48,7 +50,8 @@ class _CounterPageState extends State<CounterPage> {
       ),
       //floating action buttons are usually in the lower left corner in front of the content
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter, //call the increment counter method on button pressed
+        onPressed: _incrementCounter,
+        //call the increment counter method on button pressed
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),

@@ -9,9 +9,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp( //wrapper for all the pages/views etc
+    return MaterialApp(
+      //wrapper for all the pages/views etc
       title: 'Flutter Demo',
-      theme: ThemeData( //specifies a theme (look/design of the app)
+      theme: ThemeData(
+        //specifies a theme (look/design of the app)
         primarySwatch: Colors.blue,
       ),
       home: ContactPage(), //starting point, first page

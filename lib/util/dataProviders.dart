@@ -83,7 +83,8 @@ class ContactProvider {
   //open a new database connection
   Future open() async {
     //specify a path where the database should be stored
-    var databasePath = await getDatabasesPath(); //system specific! (automatically)
+    var databasePath =
+        await getDatabasesPath(); //system specific! (automatically)
     var path = join(databasePath, 'contacts.db');
     //try to open the database, if it does not exist create it
     db = await openDatabase(path, version: 1,

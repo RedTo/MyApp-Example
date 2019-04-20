@@ -20,13 +20,15 @@ class ContactFactory {
     this.contacts,
   });
 
-  factory ContactFactory.fromJson(Map<String, dynamic> json) => new ContactFactory(
-    contacts: new List<Contact>.from(json[tableContact].map((x) => Contact.fromJson(x))),
-  );
+  factory ContactFactory.fromJson(Map<String, dynamic> json) =>
+      new ContactFactory(
+        contacts: new List<Contact>.from(
+            json[tableContact].map((x) => Contact.fromJson(x))),
+      );
 
   Map<String, dynamic> toJson() => {
-    tableContact: new List<dynamic>.from(contacts.map((x) => x.toJson())),
-  };
+        tableContact: new List<dynamic>.from(contacts.map((x) => x.toJson())),
+      };
 }
 
 //final strings which are used to identify the corresponding values inside a json
@@ -56,19 +58,19 @@ class Contact {
 
   //factory method to create a contact out of a *parsed* json string
   factory Contact.fromJson(Map<String, dynamic> json) => new Contact(
-    id: json[columnId],
-    firstname: json[columnFirstname],
-    lastname: json[columnLastname],
-    eMail: json[columnEMail],
-    telephone: json[columnTelephone],
-  );
+        id: json[columnId],
+        firstname: json[columnFirstname],
+        lastname: json[columnLastname],
+        eMail: json[columnEMail],
+        telephone: json[columnTelephone],
+      );
 
   //method to create a json map out of current contact object
   Map<String, dynamic> toJson() => {
-    columnId: id,
-    columnFirstname: firstname,
-    columnLastname: lastname,
-    columnEMail: eMail,
-    columnTelephone: telephone,
-  };
+        columnId: id,
+        columnFirstname: firstname,
+        columnLastname: lastname,
+        columnEMail: eMail,
+        columnTelephone: telephone,
+      };
 }

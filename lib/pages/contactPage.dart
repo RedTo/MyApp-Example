@@ -1,9 +1,9 @@
+import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/models/contact.dart';
 import 'package:myapp/util/dataProviders.dart';
 import 'package:myapp/widgets/ThickSeparator.dart';
 import 'package:myapp/widgets/myWidgetCreator.dart';
-import 'package:after_layout/after_layout.dart';
 
 //ContactPage to create a list of locally stored contacts
 class ContactPage extends StatefulWidget {
