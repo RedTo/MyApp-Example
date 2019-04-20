@@ -1,16 +1,7 @@
 # myapp
 
-A new Flutter project.
+A new Flutter project, to show different types of widgets and the possibilities of Flutter to students of the course.
 
-## Getting Started
+## More Info
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+This project is a starting point for students of the course mobile application development, which is hold on the University of Applied Science Munich in the summer semester 2019.
