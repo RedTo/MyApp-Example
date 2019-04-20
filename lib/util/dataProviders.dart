@@ -72,7 +72,7 @@ class ContactProvider {
     //create a empty list
     List<Contact> contacts = new List<Contact>();
     //do a "SELECT * FROM $tableContact" -> get all contacts
-    var entries = await db.query(tableContact);
+    var entries = await db.query(Contact.tableContact);
 
     //foreach entry create a contact and add it to the list
     entries.forEach((e) => contacts.add(Contact.fromJson(e)));
@@ -90,35 +90,35 @@ class ContactProvider {
     db = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       await db.execute('''
-create table $tableContact ( 
-  $columnId integer primary key, 
-  $columnFirstname text not null,
-  $columnLastname text not null,
-  $columnEMail text not null,
-  $columnTelephone text not null)
+create table ${Contact.tableContact} ( 
+  ${Contact.columnId} integer primary key, 
+  ${Contact.columnFirstname} text not null,
+  ${Contact.columnLastname} text not null,
+  ${Contact.columnEMail} text not null,
+  ${Contact.columnTelephone} text not null)
 '''); //just as a note $variableName is the same like "String " + variableName.toString() + " other String"
     });
   }
 
   //insert a contact to the database
   Future<Contact> insert(Contact contact) async {
-    contact.id = await db.insert(tableContact, contact.toJson());
+    contact.id = await db.insert(Contact.tableContact, contact.toJson());
     return contact;
   }
 
   //get a contact by the contact id
   Future<Contact> getContact(int id) async {
-    List<Map> maps = await db.query(tableContact,
+    List<Map> maps = await db.query(Contact.tableContact,
         //specify which columns should be loaded
         columns: [
-          columnId,
-          columnFirstname,
-          columnLastname,
-          columnEMail,
-          columnTelephone
+          Contact.columnId,
+          Contact.columnFirstname,
+          Contact.columnLastname,
+          Contact.columnEMail,
+          Contact.columnTelephone
         ],
         //specify the where clause of your sql query ? is the argument
-        where: '$columnId = ?',
+        where: '${Contact.columnId} = ?',
         whereArgs: [id]); //replace ? with id (basically)
     if (maps.length > 0) {
       return Contact.fromJson(maps.first); //if contact exist create and return
@@ -129,13 +129,13 @@ create table $tableContact (
   //delete a contact from the local database by its id
   Future<int> delete(int id) async {
     return await db
-        .delete(tableContact, where: '$columnId = ?', whereArgs: [id]);
+        .delete(Contact.tableContact, where: '${Contact.columnId} = ?', whereArgs: [id]);
   }
 
   //update a contact based on its id
   Future<int> update(Contact contact) async {
-    return await db.update(tableContact, contact.toJson(),
-        where: '$columnId = ?', whereArgs: [contact.id]);
+    return await db.update(Contact.tableContact, contact.toJson(),
+        where: '${Contact.columnId} = ?', whereArgs: [contact.id]);
   }
 
   //close the database if no opened connection is needed

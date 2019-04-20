@@ -60,13 +60,4 @@ void main() {
     var contactJson = contact.toJson();
     expect(_stringToJson(sampleContact), contactJson);
   });
-
-  test('final Strings should stay the same', () {
-    expect(columnId, "id");
-    expect(columnFirstname, "firstname");
-    expect(columnLastname, "lastname");
-    expect(columnEMail, "eMail");
-    expect(columnTelephone, "telephone");
-    expect(tableContact, "contacts");
-  });
 }

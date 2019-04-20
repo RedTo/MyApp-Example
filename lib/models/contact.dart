@@ -23,25 +23,27 @@ class ContactFactory {
   factory ContactFactory.fromJson(Map<String, dynamic> json) =>
       new ContactFactory(
         contacts: new List<Contact>.from(
-            json[tableContact].map((x) => Contact.fromJson(x))),
+            json[Contact.tableContact].map((x) => Contact.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
-        tableContact: new List<dynamic>.from(contacts.map((x) => x.toJson())),
+    Contact.tableContact: new List<dynamic>.from(contacts.map((x) => x.toJson())),
       };
 }
 
 //final strings which are used to identify the corresponding values inside a json
 // and also the corresponding database columns (see contact provider).
-final String columnId = "id";
-final String columnFirstname = "firstname";
-final String columnLastname = "lastname";
-final String columnEMail = "eMail";
-final String columnTelephone = "telephone";
-final String tableContact = "contacts";
+
 
 //Contact class represents a contact with all the attributes given.
 class Contact {
+  static const String columnId = "id";
+  static const String columnFirstname = "firstname";
+  static const String columnLastname = "lastname";
+  static const String columnEMail = "eMail";
+  static const String columnTelephone = "telephone";
+  static const String tableContact = "contacts";
+
   int id;
   String firstname;
   String lastname;
