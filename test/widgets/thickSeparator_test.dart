@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:myapp/widgets/ThickSeparator.dart';
-import 'package:myapp/widgets/myWidgetCreator.dart';
 
 import '../test_helper.dart';
 

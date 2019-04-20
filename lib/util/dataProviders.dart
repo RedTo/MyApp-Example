@@ -8,7 +8,7 @@ import 'package:sqflite/sqflite.dart';
 //Contact Provider will help us to fetch data from database or api
 class ContactProvider {
   //url where we get the contact data from
-  final String url =
+  static const String url =
       'http://my-json-server.typicode.com/redto/fake_json_server/db';
 
   Database db;
