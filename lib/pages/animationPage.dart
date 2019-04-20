@@ -17,7 +17,7 @@ class _AnimationPageState extends State<AnimationPage>
   initState() {
     super.initState();
     controller = new AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
+        duration: const Duration(seconds: 2), vsync: this);
     animation = new CurvedAnimation(parent: controller, curve: Curves.easeIn);
 
     animation.addStatusListener((status) {
