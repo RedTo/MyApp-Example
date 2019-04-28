@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/pages/contactPage.dart';
+import 'package:myapp/pages/counterPage.dart';
 
 //entry point of the application (create a myapp)
 void main() => runApp(MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         //specifies a theme (look/design of the app)
         primarySwatch: Colors.blue,
       ),
-      home: ContactPage(), //starting point, first page
+      home: CounterPage(), //starting point, first page
     );
   }
 }

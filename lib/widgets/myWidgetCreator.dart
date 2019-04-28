@@ -9,6 +9,7 @@ class MyWidgetCreator {
   //create a menu drawer
   static Widget getDrawer(BuildContext context) {
     return Drawer(
+      key: Key('drawer'),
       child: ListView(
         children: <Widget>[
           UserAccountsDrawerHeader(
@@ -25,18 +26,21 @@ class MyWidgetCreator {
             onTap: () => _switchPage(context, ContactPage()),
             leading: Icon(Icons.home),
             title: Text("Contacts"),
+            key: Key('menuContactsTile'),
           ),
           ListTile(
             //menu item 2
             onTap: () => _switchPage(context, CounterPage()),
             leading: Icon(Icons.plus_one),
             title: Text("Counter"),
+            key: Key('menuCounterTile'),
           ),
           ListTile(
-            //menu item 2
+            //menu item 3
             onTap: () => _switchPage(context, AnimationPage()),
             leading: Icon(Icons.wb_incandescent),
             title: Text("Animation"),
+            key: Key('menuAnimationTile'),
           ),
         ],
       ),
