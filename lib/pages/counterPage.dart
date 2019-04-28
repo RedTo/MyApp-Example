@@ -43,6 +43,7 @@ class _CounterPageState extends State<CounterPage> {
             ),
             Text(
               '$_counter',
+              key: Key('counter'),
               style: Theme.of(context).textTheme.display1,
             ),
           ],
@@ -53,6 +54,7 @@ class _CounterPageState extends State<CounterPage> {
         onPressed: _incrementCounter,
         //call the increment counter method on button pressed
         tooltip: 'Increment',
+        key: Key('increment'),
         child: Icon(Icons.add),
       ),
     );
