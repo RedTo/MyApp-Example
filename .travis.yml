@@ -17,8 +17,7 @@ matrix:
       script:
         - ./flutter/bin/flutter test --coverage
       after_success:
-        - coveralls-lvov --help
-        - coveralls-lcov coverage/lcov.info --exlude lib/util/*
+        - coveralls-lcov coverage/lcov.info
 
     - os: linux
       language: android
