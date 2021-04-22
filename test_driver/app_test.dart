@@ -24,10 +24,12 @@ void main() {
 
     test('increments the counter', () async {
       //await Future.delayed(Duration(seconds: 5));
+      for (int i = 1; i <= 5; i++) {
+        await driver.tap(buttonFinder);
+        expect(await driver.getText(counterTextFinder), i.toString());
 
-      await driver.tap(buttonFinder);
-
-      expect(await driver.getText(counterTextFinder), "1");
+        //await Future.delayed(Duration(seconds: 1));
+      }
 
       //await Future.delayed(Duration(seconds: 5));
     });
